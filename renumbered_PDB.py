@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#For bugs e-mail ikagiampis@gnail.com
+#For bugs e-mail ikagiampis@gmail.com
 import re
 import glob
 import os
@@ -68,17 +68,23 @@ for file in filesArray:
             
             new_aaNumber = int(aaNumber) + int(number)
             
-            new_numberLength = len(str(new_aaNumber)) 
+            new_numberLength = len(str(new_aaNumber))
+
+            gap1Length = len(gapLine1)
             
             if numberLength == new_numberLength:  
                 newLine = str(startLine)+str(chainName)+str(gapLine1)+str(new_aaNumber)+str(gapLine2)+str(restLine)+"\n"
                 outFile.write(newLine)
-            else:
-                gap1Length = len(gapLine1)
+            elif number > 0:
                 newLength = gap1Length - 1        
                 ngapLine1 = ''.ljust(newLength) #remove one empty space
                 newLine = str(startLine)+str(chainName)+str(ngapLine1)+str(new_aaNumber)+str(gapLine2)+str(restLine)+"\n"
-                outFile.write(newLine) 
+                outFile.write(newLine)
+            elif number < 0:
+                newLength = gap1Length + 1
+                ngapLine1 = ''.ljust(newLength) #remove one empty space
+                newLine = str(startLine)+str(chainName)+str(ngapLine1)+str(new_aaNumber)+str(gapLine2)+str(restLine)+"\n"
+                outFile.write(newLine)
    
         numberChain2 = re.match(r'(TER.+?\d+\s+?\w+\s*?)(\w+)(\s+?)(\d+)', line, flags=0)
         

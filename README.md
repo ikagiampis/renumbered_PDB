@@ -1,5 +1,5 @@
 # renumbered_PDB
-Many times the numbering of the aa in a protein structure differs from your numbering. For example for a certain protein you refer to Lys 67 while in the PDB file the same Lys is 68. This program allows you to change the numbering of aa in a PDB file. 
+Many times the numbering of the amino acids in a protein structure differs from your numbering. For example for a certain protein you refer to Lys 67 while in the PDB file the same Lys is numbered as Lys 68. This program allows you to change the numbering of the amino acids in a PDB file. 
 
 Instruction for Biologist:
 This is a stand alone program. Feel free to modified it to meet your needs. 
